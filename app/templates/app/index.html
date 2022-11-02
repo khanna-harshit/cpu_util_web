@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CPU Port Util Analyzer</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <style>
+    body{
+        background-color:rgb(164, 163, 167);
+        margin:50px 50px;
+        font-family: monospace;
+
+    }
+    </style>
+</head>
+<body>
+    {% load static %}
+    {% include 'app/message.html' %}
+
+    <div style="padding-left:20px; padding-right:20px; padding-bottom:50px;">
+        <h1 style="text-align:center; color:rgb(30,144, 247);  padding:100px; font-size:40px; background-color:white;"><b>CPU Port Util Analyzer</b></h1>
+    </div>
+    <div>
+        <form action="download" method="POST">
+            {% csrf_token %}
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name='email' placeholder="Enter email" required>
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">IP Address</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="IP Address" name="ip_address" required>
+          </div>
+             <div class="form-group">
+                <label for="exampleInputPassword1">Username</label>
+                <input type="" class="form-control" name="username" required>
+          </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
+            </div>
+          <div class="form-group">
+                <label for="app1">Select start time:</label>
+                <input type="time" class="form-control" id="app1" name="start_time" required>
+            </div>
+            <div class="form-group">
+               <label for="appt">Select end time:</label>
+                <input type="time" class="form-control" id="appt" name="end_time" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Gap in between two snapshots</label>
+                <input type="number" class="form-control" name="gap" required>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <script type="text/javascript">
+                     $(function () {
+                         $('#datetimepicker3').datetimepicker({
+                             format: 'LT'
+                         });
+                     });
+                     $(function () {
+                         $('#datetimepicker2').datetimepicker({
+                             format: 'LT'
+                         });
+                     });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+</body>
+</html>
